@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+html {
+  font-size: 1em;
+}
+
+body {
+  background: #fdfdfd;
+  line-height: 1.625;
+}
+
+h2 {
+  margin: 1em 0;
+  color: #4b4b4b;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: #4b4b4b;
+}
+
+section {
+  padding: 3% 5% 4%;
+}
+
+main {
+  display: block;
+  background: #cacaca;
+  width: 100%;
+  padding: 3% 5% 4%;
+}
+main .boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .boxes a {
+  flex: 0 0 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 70px;
+  background: #136fd2;
+  color: #fdfdfd;
+}
+main .boxes a:hover {
+  background: #0f56a3;
+}
+@media only screen and (min-width: 321px) {
+  main .boxes a {
+    flex-basis: 46%;
+    margin: 0 1% 20px 1%;
+  }
+}
+@media only screen and (min-width: 530px) {
+  main .boxes a {
+    flex-basis: 31%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main .boxes a {
+    flex-basis: 23%;
+  }
+}
+
+.modal {
+  display: flex;
+  background: #a1caf6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -5;
+  transform: scale(0.5);
+  transition: all 0.3s;
+}
+.modal button {
+  position: absolute;
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+  outline: none;
+}
+.modal button:hover {
+  color: #fdfdfd;
+}
+.modal .m-content {
+  align-self: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.modal .m-message {
+  text-align: center;
+}
+.modal .m-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal .m-info li {
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #4b4b4b;
+  border-bottom: 0;
+}
+.modal .m-info li:nth-of-type(odd) {
+  background: #8abdf4;
+}
+.modal .m-info li:nth-of-type(8) {
+  border-bottom: 1px solid #4b4b4b;
+}
+@media only screen and (min-width: 530px) {
+  .modal .m-info li {
+    width: 50%;
+  }
+  .modal .m-info li:nth-of-type(odd) {
+    border-right: none;
+    background: transparent;
+  }
+  .modal .m-info li:nth-of-type(7) {
+    border-bottom: 1px solid #4b4b4b;
+  }
+}
+.modal .m-info a {
+  color: inherit;
+}
+.modal .m-info a:hover {
+  transition: color 0.3s;
+  color: #4b4b4b;
+}
+.modal.active {
+  opacity: 1;
+  z-index: 10;
+  transform: scale(0.8);
+}
+
+.loader {
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}/*# sourceMappingURL=style.css.map */

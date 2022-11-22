@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+$bg-main-color: #fdfdfd;
+$text-color: #4b4b4b;
+$highlight-color: #136fd2;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+html {
+    font-size: 1em;
+}
+
+body {
+    background: $bg-main-color;
+    line-height: 1.625;
+}
+
+h2 {
+    margin: 1em 0;
+    color: $text-color;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: $text-color;
+}
+
+section {
+    padding: 3% 5% 4%;
+}
+
+main {
+    display: block;
+    background: darken($bg-main-color, 20%);
+    width: 100%;
+    padding: 3% 5% 4%;
+
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 70px;
+            background: $highlight-color;
+            color: $bg-main-color;
+            &:hover {
+                background: darken($highlight-color, 10%);
+            }
+
+            @media only screen and (min-width: 321px) {
+                flex-basis: 46%;
+                margin: 0 1% 20px 1%;
+            }
+            @media only screen and (min-width: 530px) {
+                flex-basis: 31%;
+            }
+            @media only screen and (min-width: 768px) {
+                flex-basis: 23%;
+            }
+        }
+    }
+}
+
+.modal {
+    display: flex;
+    background: lighten($highlight-color, 35%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -5;
+    transform: scale(.5);
+    transition: all .3s;
+
+    button {
+        position: absolute;
+        font-size: 2em;
+        background: transparent;
+        border: none;
+        right: 10px;
+        top: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: color .3s;
+        outline: none;
+        &:hover {
+            color: $bg-main-color;
+        }
+    }
+
+    .m-content {
+        align-self: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .m-message {
+        text-align: center;
+    }
+    .m-info {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid $text-color;
+            border-bottom: 0;
+            &:nth-of-type(odd) {
+                background: lighten($highlight-color, 30%);
+            }
+            &:nth-of-type(8) {
+                border-bottom: 1px solid $text-color;
+            }
+            @media only screen and (min-width: 530px) {
+                width: 50%;
+                &:nth-of-type(odd) {
+                    border-right: none;
+                    background: transparent;
+                }
+                &:nth-of-type(7) {
+                    border-bottom: 1px solid $text-color;
+                }
+            }
+        }
+        a {
+            color: inherit;
+            &:hover {
+                transition: color .3s;
+                color: $text-color;
+            }
+        }
+    }
+    &.active {
+        opacity: 1;
+        z-index: 10;
+        transform: scale(.8);
+    }
+}
+
+.loader {
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
